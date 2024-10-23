@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+.mainContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.inputFields {
+  display: flex;
+  gap: 5px;
+}
+
