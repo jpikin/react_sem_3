@@ -1,20 +1,24 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import '../App.css'
+import { useEffect, useState } from 'react';
 
 function TemperatureConverter() {
     
-    const convert = () => {
-        console.log('push');
+    const [valueF, setValueF] = useState();
+    const [valueC, setValueC] = useState();
+
+    function convert(){
+        
     }
-    
-    
+
+
     return ( 
         <div className='mainContainer'>
             <h1>Конвертер температуры</h1>
             <div className='inputFields'>
-                <TextField id="outlined-basic" label="C" variant="outlined" />
-                <TextField id="outlined-basic" label="F" variant="outlined" />
+                <TextField id="tf" label="C" variant="outlined" value={valueC} />
+                <TextField id="tf" label="F" variant="outlined" value={valueF} />
             </div>
 
             <Button variant="contained" onClick={convert}>Convert</Button>
@@ -23,3 +27,5 @@ function TemperatureConverter() {
 }
 
 export default TemperatureConverter;
+
+
