@@ -9,17 +9,31 @@ function TemperatureConverter() {
     const [valueC, setValueC] = useState('');
 
     const convert = (e) =>{
-        // setValueF(Number(convertToF(Number(valueC))));
-        // setValueC(Number(convertToC(Number(valueF))));
-        console.log(valueC, valueF)
+        if (valueC && valueF) {
+            setValueC('');
+            setValueF('');
+            alert("Толькл одна температура должна быть заполнена!")
+        } else if (isNaN(valueC) || isNaN(valueF)) {
+            alert("Введите числовое значение!")
+            setValueC('');
+            setValueF('');
+        } else if (valueC) {
+            setValueF(convertToF(valueC));
+        } else if (valueF) {
+            setValueC(convertToC(valueF));
+        }  
+        
     }
     const takeValueC = (e) => {
         setValueC(e.target.value);
-        console.log(e.target.value)
+        
     }
     const takeValueF = (e) => {
         setValueF(e.target.value);
-        console.log(e.target.value)
+    }
+    const reset = (e) => {
+        setValueC('');
+        setValueF('');
     }
 
     return ( 
@@ -31,6 +45,7 @@ function TemperatureConverter() {
             </div>
 
             <Button variant="contained" onClick={convert}>Convert</Button>
+            <Button variant="contained" onClick={reset}>Reset</Button>
         </div>
      );
 }
@@ -39,8 +54,8 @@ export default TemperatureConverter;
 
 
 function convertToC(value){
-    return  (value * 9 / 5) + 32;
+    return  (value - 32) * 5 / 9;
 }
 function convertToF(value){
-    return  (value - 32) * 5 / 9;
+    return  (value * 9 / 5) + 32;
 }
