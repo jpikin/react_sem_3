@@ -57,4 +57,17 @@
   background-color: rgb(95, 95, 95);
   color: azure;
 }
+.mainContainer {
+  display: flex;
+}
+.task_two_lable {
+  margin-top: 50px;
+}
+.todoList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style-type: none;
+  padding-left: 0; 
+}
 
