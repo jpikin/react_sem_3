@@ -1,5 +1,4 @@
 import './App.css';
-import Greetings from './components/Greetings';
 import TemperatureConverter from './components/TemperatureConverter';
 import ThemeSwitcher from './components/ThemeSwitcher';
 
