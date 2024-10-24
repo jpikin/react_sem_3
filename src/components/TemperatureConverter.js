@@ -5,20 +5,29 @@ import { useState } from 'react';
 
 function TemperatureConverter() {
     
-    const [valueF, setValueF] = useState();
-    const [valueC, setValueC] = useState();
+    const [valueF, setValueF] = useState('');
+    const [valueC, setValueC] = useState('');
 
-    function convert(){
-        console.log(valueC, valueF);
+    const convert = (e) =>{
+        // setValueF(Number(convertToF(Number(valueC))));
+        // setValueC(Number(convertToC(Number(valueF))));
+        console.log(valueC, valueF)
     }
-
+    const takeValueC = (e) => {
+        setValueC(e.target.value);
+        console.log(e.target.value)
+    }
+    const takeValueF = (e) => {
+        setValueF(e.target.value);
+        console.log(e.target.value)
+    }
 
     return ( 
         <div className='mainContainer'>
             <h1>Конвертер температуры</h1>
             <div className='inputFields'>
-                <TextField id="tf1" label="C" variant="outlined" value={valueC} />
-                <TextField id="tf2" label="F" variant="outlined" value={valueF} />
+                <TextField id="tf1" label="C" variant="outlined" onChange={takeValueC} value={valueC} />
+                <TextField id="tf2" label="F" variant="outlined" onChange={takeValueF} value={valueF} />
             </div>
 
             <Button variant="contained" onClick={convert}>Convert</Button>
