@@ -60,7 +60,7 @@
 .mainContainer {
   display: flex;
 }
-.task_two_lable {
+.task_two_label {
   margin-top: 50px;
 }
 .todoList {
@@ -69,5 +69,14 @@
   gap: 5px;
   list-style-type: none;
   padding-left: 0; 
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  margin-right: 0;
+}
+.card-w {
+  width: 200px;
 }
 
