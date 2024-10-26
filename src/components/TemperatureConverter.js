@@ -9,10 +9,13 @@ function TemperatureConverter() {
     const [valueC, setValueC] = useState('');
 
     const convert = (e) =>{
-        if (valueC && valueF) {
+        if (!valueC && !valueF) {
+            alert("Одна температура должна быть заполнена!")
+        }
+        else if (valueC && valueF) {
             setValueC('');
             setValueF('');
-            alert("Толькл одна температура должна быть заполнена!")
+            alert("Только одна температура должна быть заполнена!")
         } else if (isNaN(valueC) || isNaN(valueF)) {
             alert("Введите числовое значение!")
             setValueC('');
@@ -38,7 +41,7 @@ function TemperatureConverter() {
 
     return ( 
         <div className='mainContainer'>
-            <h1>Конвертер температуры</h1>
+            <h2>Конвертер температуры</h2>
             <div className='inputFields'>
                 <TextField id="tf1" label="C" variant="outlined" onChange={takeValueC} value={valueC} />
                 <TextField id="tf2" label="F" variant="outlined" onChange={takeValueF} value={valueF} />

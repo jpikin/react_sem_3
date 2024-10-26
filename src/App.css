@@ -75,8 +75,8 @@
   flex-direction: column;
   margin-left: 0;
   margin-right: 0;
+  width: 300px;
+  white-space: normal;
 }
-.card-w {
-  width: 200px;
-}
+
 
